@@ -1,0 +1,46 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <mat-card>
+                    <div class="col-md-6 offset-md-3">
+                        <h3> Update Task </h3>
+                        <form (ngSubmit)="onSubmit(taskStartDate.value)">
+
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Employee Name</mat-label>
+                                <input required [(ngModel)]="task.employeeName" name="employeeName" matInput
+                                    placeholder="Enter here" />
+                            </mat-form-field>
+
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Task Tiltle</mat-label>
+                                <input required [(ngModel)]="task.taskName" name="taskName" matInput
+                                    placeholder="Enter here" />
+                            </mat-form-field>
+
+                            <mat-form-field appearance="outline">
+                                <mat-label>Task Start Date</mat-label>
+                                <input #taskStartDate [(ngModel)]="task.taskStartDate" matInput
+                                    [matDatepicker]="picker">
+                                <mat-hint>MM/DD/YYYY</mat-hint>
+                                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field>
+
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Days for Complition</mat-label>
+                                <input required [(ngModel)]="task.numberofDays" name="numberofDays" matInput
+                                    placeholder="Enter here" />
+                            </mat-form-field>
+
+                            <div class="container text-center">
+                                <button type="submit" mat-raised-button color="primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

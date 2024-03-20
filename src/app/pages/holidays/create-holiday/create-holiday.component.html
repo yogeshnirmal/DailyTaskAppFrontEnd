@@ -1,0 +1,33 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <mat-card>
+          <div class="col-md-6 offset-md-3">
+            <h3> Create Holiday </h3>
+            <form (ngSubmit)="onSubmit(holidayDate.value)">
+
+              <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Holiday Name</mat-label>
+                <input required [(ngModel)]="holiday.holidayName" name="holidayName" matInput
+                  placeholder="Enter here" />
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label>Holiday date</mat-label>
+                <input #holidayDate [(ngModel)]="holiday.holidayDate" matInput [matDatepicker]="picker">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+
+              <div class="container text-center">
+                <button type="submit" mat-raised-button color="primary">Submit</button>
+              </div>
+            </form>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
